@@ -3,7 +3,7 @@ from api.models.product import Product
 
 
 class Cart(models.Model):
-    products = models.ManyToManyField(Product, blank=True)
+    products = models.ManyToManyField(Product, blank=True, null=True)
 
     class Meta:
         verbose_name = 'Cart'

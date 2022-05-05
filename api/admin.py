@@ -10,7 +10,7 @@ from api.models.guidebook import Guidebook
 
 @admin.register(Cart)
 class CartAdmin(admin.ModelAdmin):
-    list_display = ['id', 'products']
+    list_display = ['id']
 
 
 @admin.register(Product)
