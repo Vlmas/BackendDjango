@@ -13,7 +13,6 @@ from api.views.class_based_views.product import *
 from api.views.class_based_views.category import *
 from api.views.class_based_views.user import *
 
-
 router = routers.DefaultRouter()
 
 urlpatterns = [
@@ -25,11 +24,10 @@ urlpatterns = [
 
     path('carts/', cart_list),
     path('carts/<int:cart_id>/', cart_details),
-    path('carts/<int:cart_id>/products', cart_products),
+    path('carts/<int:cart_id>/products/', cart_products),
 
     path('products/', ProductListAPIView.as_view()),
-    path('products/<int:product_id>', ProductDetailsAPIView.as_view()),
-    path('products/<str:category_name>', CategoryProductsAPIView.as_view()),
+    path('products/<int:product_id>/', ProductDetailsAPIView.as_view()),
 
     path('categories/', CategoryListAPIView.as_view()),
     path('categories/<str:name>/', CategoryDetailsAPIView.as_view()),
@@ -41,5 +39,5 @@ urlpatterns = [
 
     path('guidebooks/', guidebook_list),
     path('guidebooks/<int:guidebook_id>/', guidebook_details),
-    path('guidebook/<int:guidebook_id>/content/', guidebook_content),
+    path('guidebooks/<int:guidebook_id>/content/', guidebook_content),
 ]
